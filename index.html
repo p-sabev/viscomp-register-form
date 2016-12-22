@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/hover.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>VISCOMP RegisterForm</title>
+</head>
+<body>
+    <div class="wrapper" id="snow">
+
+        <ul id="progressbar" class="">
+            <li class="active" id="progressUser">Потребител</li>
+            <li id="progressAddress">Адрес</li>
+            <li id="progressNote">Бележки</li>
+        </ul>
+
+        <section id="register">
+            <form method="post" action="javascript:void(0);" class="hidden" id="userForm">
+
+                <div class="col-2 float-left">
+                    <input name="first_name" id="first_name" class="input" type="text" required placeholder="Име*">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="surname" id="surname"  class="input" type="text" placeholder="Презиме">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="last_name" id="last_name"  class="input" required type="text" placeholder="Фамилия*">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="username" id="username"  class="input" type="text" required placeholder="Никнейм*">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="email" id="email" class="input" type="email" required placeholder="Имейл адрес*">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="phone_number" id="phone_number" class="input" type="tel" placeholder="Телефон">
+                </div>
+
+
+                <div class="col-4">
+                    <input type="submit" id="notSubmitUsers" onclick="registerForm.submitUser();" class="hvr-pulse button" value="Напред">
+                </div>
+            </form>
+
+            <form method="post" action="javascript:void(0);" class="hidden" id="addressForm">
+                <div class="col-2 float-left">
+                    <input name="address_row_1" id="address_row_1" class="input" type="text" placeholder="Адрес*">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="address_row_2" id="address_row_2" class="input" type="text" placeholder="Друг адрес">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="post_code" id="post_code" class="input" type="text" placeholder="Пощенски код*">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="city" id="city" class="input" type="text" placeholder="Населено място*">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="area" id="area" class="input" type="text" placeholder="Област">
+                </div>
+                <div class="col-2 float-left">
+                    <input name="country" id="country"  class="input" type="text" placeholder="Държава*">
+                </div>
+
+                <div class="col-2 float-left">
+                    <input type="submit" id="notSubmitAddress" onclick="registerForm.submitAddress(false);" class="hvr-pulse button" value="Добави адрес">
+                </div>
+                <div class="col-2 float-left">
+                    <input type="submit" id="notSubmitAddress" onclick="registerForm.submitAddress(true);" class="hvr-pulse button" value="Напред">
+                </div>
+            </form>
+
+            <form method="post" action="javascript:void(0);" class="hidden" id="notesForm">
+                <div class="col-4">
+                    <input name="note" id="note" class="note input" placeholder="Текст на бележката">
+                </div>
+
+                <div class="col-2 float-left">
+                    <input type="submit" id="notSubmitAddress" onclick="registerForm.submitNote(false);" class="button" value="Добави бележка">
+                </div>
+                <div class="col-2 float-left">
+                    <input type="submit" id="notSubmitAddress" onclick="registerForm.submitNote(true);" class="hvr-pulse button" value="Напред">
+                </div>
+            </form>
+
+
+
+            <div class="hidden" id="successForm">
+                <h2 class="bigLabel">Следната информация беше записана в mySql базата данни:</h2>
+                <div class="info" id="userInfo">
+                    <h2 class="bigLabel">Потребител</h2>
+                </div>
+                <div class="info" id="addressInfo">
+                    <h2 class="bigLabel">Адрес</h2>
+                </div>
+                <div class="info" id="notesInfo">
+                    <h2 class="bigLabel">Бележки</h2>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
